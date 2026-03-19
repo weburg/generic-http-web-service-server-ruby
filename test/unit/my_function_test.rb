@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require_relative '../../app'
+require 'my_function'
 
 class MyFunctionTest < Minitest::Test
   def test_my_function

@@ -1,8 +1,7 @@
-require "sinatra"
+$LOAD_PATH << File.expand_path('lib', __dir__)
 
-def my_function(name)
-  "Your function knows you as " + name
-end
+require 'sinatra'
+require 'my_function'
 
 get '/' do
   @date = Time.now.utc
