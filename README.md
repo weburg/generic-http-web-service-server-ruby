@@ -17,7 +17,7 @@ We're going to use the Puma Rack server and rely on Sinatra to be the static HTM
 
 Install Ruby 3.
 
-### IDE (PhpStorm) setup
+### IDE (RubyMine) setup
 
 Add [project_root]/tests to IDE's Include Path list (right click app folder, then select Mark Directory As -> Test Sources Root)
 
