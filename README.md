@@ -19,8 +19,9 @@ Install Ruby 3.
 
 ### IDE (RubyMine) setup
 
-Add [project_root]/lib to IDE's sources list (right click app folder, then select Mark Directory As -> Load Path Root)
-Add [project_root]/tests to IDE's sources list (right click app folder, then select Mark Directory As -> Test Sources Root)
+Add <project_root>/lib to IDE's Load Path (Settings -> Project Structure -> Load Path)
+
+Mark directories as you wish, e.g. Sources Root, Templates, Test Sources, etc. (right click desired folder, then select Mark Directory As)
 
 Make sure the required bundler gems are installed.
 
