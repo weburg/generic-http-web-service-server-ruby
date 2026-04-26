@@ -2,11 +2,13 @@ GEM
   remote: https://rubygems.org/
   specs:
     base64 (0.3.0)
+    cgi (0.5.1)
     date (3.5.1)
     debug (1.11.1)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    erb (6.0.2)
+    erb (4.0.4.1)
+      cgi (>= 0.3.3)
     io-console (0.8.2)
     irb (1.17.0)
       pp (>= 0.6.0)
@@ -14,7 +16,7 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     logger (1.7.0)
-    minitest (5.27.0)
+    minitest (5.26.1)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.5)
