@@ -69,4 +69,4 @@ DEPENDENCIES
   sinatra (~> 4.2.1)
 
 BUNDLED WITH
-   2.6.9
+   2.5.10
