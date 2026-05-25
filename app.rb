@@ -3,7 +3,7 @@ $LOAD_PATH << File.expand_path('lib', __dir__)
 require 'sinatra'
 require 'json'
 require 'my_function'
-require 'domain/omnibus'
+require 'example/domain/omnibus'
 
 get '/' do
   @date = Time.now.utc
