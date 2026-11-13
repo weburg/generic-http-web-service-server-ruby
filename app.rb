@@ -1,6 +1,7 @@
 $LOAD_PATH << File.expand_path('lib', __dir__)
 
 require 'sinatra'
+require 'sinatra/reloader' if development?
 require 'json'
 require 'my_function'
 require 'example/domain/omnibus'

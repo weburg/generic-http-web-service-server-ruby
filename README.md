@@ -31,14 +31,24 @@ The application will run with the Puma Rack server on port 8081.
 
 If using the CLI, ensure you are in the project directory. Run:
 
-`bundle exec puma -p 8081`
+`bundle exec puma -e production -p 8081`
 
-If using an IDE, create a Rack run configuration with Port set to 8081 and the
-Rack config file set to <project root>/config.ru. Then you can run or debug the
+If using an IDE, create a Rack run configuration with Port set to 8081, the
+Rack config file set to <project root>/config.ru, and Environment variables set to RACK_ENV=production. Then you can run or debug the
 application. All the gems needed for remote debugging to work are already in the
 Gemfile.
 
 Now test the application by going to http://localhost:8081 and make sure everything works.
+
+For development, ensure you are in the project directory. Run:
+
+`bundle exec puma -e development -p 8081`
+
+If using an IDE, create a Rack configuration as per above but set Environment variables to RACK_ENV=development.
+
+This uses Sinatra's reloader (provided by the development-only `sinatra-contrib` gem) and supports automatic reloading when files change.
+
+Now test the application by going to http://localhost:8081.
 
 ### Running the tests
 

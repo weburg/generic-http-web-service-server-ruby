@@ -8,4 +8,5 @@ gem "puma", "~> 7.2.0"
 group :development do
   gem "debug", "~> 1.11.1"
   gem "rackup", "~> 2.2.0"
+  gem "sinatra-contrib", "~> 4.2.1"
 end
