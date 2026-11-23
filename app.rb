@@ -2,7 +2,6 @@ $LOAD_PATH << File.expand_path('lib', __dir__)
 
 require 'sinatra'
 require 'sinatra/reloader' if development?
-require 'json'
 require 'my_function'
 require 'example/domain/omnibus'
 
@@ -19,7 +18,7 @@ get "/generichttpws/?*" do
     erb :"generichttpws/engines"
   elsif params["splat"].first.split("/").last == "omnibus"
     omnibus = Omnibus.new
-    omnibus.birthtime = Time.now
+    omnibus.birthtime = Time.local(2016, 5, 11, 12, 0, 0)
     omnibus.sendtime = Time.now.utc
     omnibus.toppings = ["Cheese", "Pepperoni", "Sausage"]
     omnibus.sides = ["Fries", "Onion Rings"]
@@ -30,7 +29,8 @@ get "/generichttpws/?*" do
       "Fish" => "Chardonnay",
     }
 
-    JSON.generate(omnibus.instance_variables.to_h { |ivar| [ivar.to_s.delete_prefix("@"), omnibus.instance_variable_get(ivar)] })
+    content_type 'application/json'
+    Ghowst::JsonSerializer.generate(omnibus)
   else
     erb :"generichttpws/home"
   end
