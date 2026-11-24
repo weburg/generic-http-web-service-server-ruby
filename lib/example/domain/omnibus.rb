@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 require 'weburg/ghowst/json_serializer'
+require 'example/domain/bus'
 
-class Omnibus
+class Omnibus < Bus
   include Ghowst::JsonFields
 
   attr_accessor :birthtime,
@@ -17,6 +18,8 @@ class Omnibus
   ghowst_field :sendtime, type: :offsetdatetime
 
   def initialize
+    super('omni-58-87')
+
     @birthtime = nil
     @sendtime = nil
     @toppings = []
