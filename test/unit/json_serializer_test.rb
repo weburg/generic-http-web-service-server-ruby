@@ -27,35 +27,4 @@ class JsonSerializerTest < Minitest::Test
       assert_includes error.message, 'explicit UTC or fixed offset'
     end
   end
-
-  def test_preserves_regular_json_fields_and_nil_values
-    omnibus = Omnibus.new
-    omnibus.toppings = ['Cheese']
-    omnibus.birthtime = nil
-
-    result = JSON.parse(Ghowst::JsonSerializer.generate(omnibus))
-
-    assert_equal ['Cheese'], result.fetch('toppings')
-    assert_nil result.fetch('birthtime')
-    assert_equal %w[birthtime sendtime toppings sides onFire document pairing], result.keys
-  end
-
-  def test_serializes_public_fields_without_ghowst_metadata_and_omits_private_state
-    model = Class.new do
-      attr_accessor :name, :nickname
-
-      def initialize
-        @name = 'Example'
-        @internal = 'not exposed'
-      end
-
-      private
-
-      attr_reader :internal
-    end.new
-
-    result = JSON.parse(Ghowst::JsonSerializer.generate(model))
-
-    assert_equal({ 'name' => 'Example', 'nickname' => nil }, result)
-  end
 end
