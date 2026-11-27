@@ -16,7 +16,7 @@ get "/generichttpws/?*" do
   @request_uri = request.path_info
   if params["splat"].first.split("/").last == "engines"
     erb :"generichttpws/engines"
-  elsif params["splat"].first.split("/").last == "omnibus"
+  elsif params["splat"].first.split("/").last == "omnibusses"
     omnibus = Omnibus.new
     omnibus.birthtime = Time.local(2016, 5, 11, 12, 0, 0)
     omnibus.sendtime = Time.now.utc
